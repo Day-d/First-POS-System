@@ -1,0 +1,76 @@
+/* sale-historystyle.css */
+.order-history-section {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #FA936D;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.order-history-header,
+.order-details-header {
+    margin-bottom: 20px;
+}
+
+.order-history-header h3,
+.order-details-header h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.order-history-header p,
+.order-details-header p {
+    color: #333;
+    font-size: 0.9em;
+}
+
+.divider-line {
+    border-top: 1px solid #FA936D; 
+    margin: 20px 0;
+}
+
+.order-table-container {
+    overflow-x: auto;
+}
+
+.order-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+}
+
+.order-table-container th,
+.order-table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0; 
+}
+
+.order-table-container th {
+    background-color: #f7f7f7;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+.order-table-container tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.order-table-container tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.order-table-container td {
+    color: #333;
+}
+
+.order-table-container td:last-child {
+    text-align: right;
+}

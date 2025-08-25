@@ -1,0 +1,199 @@
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #333;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .menu-section, .bill-section {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .menu-section {
+    flex: 2;
+  }
+
+  .bill-section {
+    flex: 1;
+  }
+
+  .menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .menu-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .menu-item img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .menu-item h3 {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .menu-item p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .add-to-cart-btn {
+    background-color: #F5652F;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .add-to-cart-btn:hover {
+    background-color: #e15424;
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .category-tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #999;
+  }
+
+  .category-tab.active {
+    border-bottom: 3px solid #F5652F;
+    color: #F5652F;
+  }
+
+  .bill-header h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .bill-items {
+    margin: 10px 0;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .bill-item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .bill-item-details,
+  .bill-item-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  .quantity-btn {
+    background-color: #F5652F;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .remove-item-btn {
+    background: transparent;
+    color: red;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .bill-summary {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+
+  .total-amount {
+    font-weight: bold;
+    color: #F5652F;
+  }
+
+  .payment-options select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .action-buttons .btn {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .btn-clear {
+    background-color: #ccc;
+    color: #000;
+  }
+
+  .btn-checkout {
+    background-color: #F5652F;
+    color: #fff;
+  }
+
+  .btn-print {
+    background-color: #333;
+    color: #fff;
+  }
