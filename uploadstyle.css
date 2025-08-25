@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --sidebar-bg: #F8F8F8; /* Very light grey */
+    --pos-orange: #FF7F50; /* Coral orange for POS logo and top bar */
+    --main-bg: #FFFFFF; /* White for the main content background */
+    --text-color: #333;
+    --light-text-color: #666;
+    --border-color: #EEE; /* Lighter border for general elements */
+    --input-bg: #FFFFFF;
+    --form-bg: #F0F0F0; /* Slightly darker grey for the form card */
+    --button-cancel-bg: #E0E0E0; /* Light grey for cancel button */
+    --button-cancel-text: #555;
+    --table-header-bg: #F8F8F8; /* Light grey for table header */
+    --table-row-hover: #FAFAFA; /* Very light hover for table rows */
+    --edit-action-btn: #3498db; /* Blue for edit */
+    --delete-action-btn: #e74c3c; /* Red for delete */
+}
+
+
+
+/* Main Content Styling */
+
+.content-area {
+    display: flex;
+    flex-grow: 1;
+    padding: -20px -30px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+
+.left-section {
+    flex: 0 0 500px;
+}
+
+.right-section {
+    flex: 1;
+}
+
+/* Product Upload Section */
+.product-upload-section h2 {
+    color:#333;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.form-container {
+    background-color:white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #f7a783;
+    width: 100%;
+}
+/* #F0F0F0 */
+.form-container h3 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    flex:0 0 100px;
+    color: #333;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #EEE;
+    border-radius: 4px;
+    font-size: 0.95em;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.form-group input[type="file"] {
+    padding: 8px 12px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #FF7F50;
+    box-shadow: 0 0 0 2px rgba(255, 127, 80, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 600;
+}
+
+.cancel-btn {
+    background-color: #E0E0E0;
+    color:  #555;
+}
+
+.cancel-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.submit-btn {
+    background-color:  #f5652f;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color:#e6663892;
+}
+
+/* Product List Section */
+.product-list-section {
+    background-color: var(--main-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px#f7a783;
+    padding: 20px;
+    display: flex; /* Use flex to manage inner elements */
+    flex-direction: column;
+    margin-top: 68px;
+}
+
+.product-list-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.edit-btn {
+    background-color: #F5652F;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.edit-btn:hover {
+    background-color: #e6663892;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    color: var(--text-color);
+    background-color:var(--table-header-bg);
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-table th {
+    background-color: #fa936d41;
+    font-weight: 600;
+    color:#555;
+    text-transform: uppercase;
+}
+
+.product-table tbody tr:hover {
+    background-color: var(--table-row-hover);
+}
+
+.product-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* New: Styles for action buttons in table */
+.action-column {
+    width: 120px; /* Adjust as needed */
+    text-align: center; /* Center the buttons */
+}
+
+.action-column .action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.action-column .action-buttons button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.action-column .edit-action-btn {
+    background-color: var(--edit-action-btn);
+}
+.action-column .edit-action-btn:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+.action-column .delete-action-btn {
+    background-color: var(--delete-action-btn);
+}
+.action-column .delete-action-btn:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* Hide action buttons by default, show in edit mode */
+.action-column .action-buttons {
+    display: none;
+}
+
+.product-table.edit-mode .action-column .action-buttons {
+    display: flex; /* Show when edit mode is active */
+}
+
+.product-table.edit-mode .action-column {
+    display: table-cell; /* Ensure the column is visible */
+}
+
+/* Initially hide the action column if no edit mode */
+.product-table th.action-column,
+.product-table td.action-column {
+    display: none;
+}
+
+.product-table.edit-mode th.action-column,
+.product-table.edit-mode td.action-column {
+    display: table-cell;
+}
+
+/* Message for no data */
+#noDataMessage {
+    padding: 20px;
+}
+
+.product-table th.action-column,
+.product-table td.action-column {
+    display: none; /* Hide action column by default */
+}
+
+.product-table.edit-mode th.action-column,
+.product-table.edit-mode td.action-column {
+    display: table-cell; /* Show action column in edit mode */
+}
