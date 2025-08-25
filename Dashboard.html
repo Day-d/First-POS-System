@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboardstyle.css">
+    <link rel="stylesheet" href="uploadstyle.css">
+    <link rel="stylesheet" href="sale-historystyle.css">
+    <link rel="stylesheet" href="sale.css">
+    <link rel="stylesheet" href="accountstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body class="flex flex-col h-screen">
+    <header class="flex items-center justify-between p-4 bg-white shadow-md z-10">
+        <div class="bg-orange-500 text-white font-bold py-2 px-4 rounded-xl shadow-md">
+            POS
+        </div>
+        <div class="flex items-center w-full max-w-md mx-4 md:mx-auto bg-orange-500 rounded-full shadow-md">
+            <input type="text" placeholder="Search" class="flex-grow p-2 pl-4 rounded-l-full bg-orange-500 text-white placeholder-white focus:outline-none focus:border-orange-400 transition duration-300 ease-in-out">
+            <button class="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-r-full shadow-md transition duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="header-title" class="text-xl font-semibold text-gray-800 hidden md:block">Admin Dashboard</div>
+    </header>
+
+
+    <div class="flex flex-1 overflow-hidden">
+
+        <nav class="w-64 bg-white p-6 shadow-lg flex-shrink-0 flex flex-col justify-between overflow-y-auto">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 transition duration-200 ease-in-out" data-page="dashboard" data-title="Admin Dashboard">
+                        <div class="green-light-indicator"></div>
+                        <span class="font-medium text-gray-800">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 transition duration-200 ease-in-out" data-page="upload" data-title="Upload">
+                        <div class="green-light-indicator"></div>
+                        <span class="font-medium text-gray-700">Upload</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 transition duration-200 ease-in-out" data-page="sale" data-title="Sale">
+                        <div class="green-light-indicator"></div>
+                        <span class="font-medium text-gray-700">Sale</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 transition duration-200 ease-in-out" data-page="sale-history" data-title="Sale History">
+                        <div class="green-light-indicator"></div>
+                        <span class="font-medium text-gray-700">Sale History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 transition duration-200 ease-in-out" data-page="setting" data-title="Setting">
+                        <div class="green-light-indicator"></div>
+                        <span class="font-medium text-gray-700">Setting</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="mt-8">
+                <button class="w-full bg-[#F5652F] hover:bg-[#c94d24] text-white font-bold py-3 px-6 rounded-xl shadow-md transition duration-300 ease-in-out" data-page="sign-out" data-title="Sign Out">
+                    Sign Out
+                </button>
+            </div>
+        </nav>
+
+
+        <main id="content-area" class="flex-1 p-6 bg-gray-100 main-content-scrollable">
+            <section id="dashboard-content" class="page-content">
+                <h1 class="text-3xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+                    <div class="bg-gradient-to-br from-orange-400 to-orange-500 text-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300 ease-in-out orange-shadow">
+                        <div class="text-6xl mb-2">
+                            <img src="images/usericon.png"  alt ="user icon" class="w-16 h-16 opacity-75" />
+                        </div>
+                        <h2 class="text-xl font-semibold mb-1">Total Customers</h2>
+                        <p class="text-4xl font-bold">500</p>
+                    </div>
+
+
+                    <div class="bg-gradient-to-br from-orange-400 to-orange-500 text-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300 ease-in-out orange-shadow">
+                        <div class="text-6xl mb-2">
+                            <img src="images/boxicon.png"  alt="box icon" class="w-16 h-16 opacity-75" />
+                        </div>
+                        <h2 class="text-xl font-semibold mb-1">Total Items</h2>
+                        <p class="text-4xl font-bold">7000</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-400 to-orange-500 text-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300 ease-in-out orange-shadow">
+                        <div class="text-6xl mb-2">
+                            <img src="images/dollaricon.png"   alt="dollar icon" class="w-16 h-16 opacity-75" />
+                        </div>
+                        <h2 class="text-xl font-semibold mb-1">Total Incomes</h2>
+                        <p class="text-4xl font-bold">$ 50,000</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-400 to-orange-500 text-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300 ease-in-out orange-shadow">
+                        <div class="text-6xl mb-2">
+                            <img src="images/uparrowiocn.png"   alt="up arrow icon" class="w-16 h-16 opacity-75" />
+                        </div>
+                        <h2 class="text-xl font-semibold mb-1">Client Activity</h2>
+                        <p class="text-4xl font-bold">85 %</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg orange-shadow">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sale Summary</h2>
+                        <div class="flex justify-center items-center h-72">
+                            <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid meet">
+                                <defs>
+                                    <linearGradient id="chartGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.5"/>
+                                        <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                    <linearGradient id="chartGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.5"/>
+                                        <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                    <linearGradient id="chartGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#f7a783" stop-opacity="0.5"/>
+                                        <stop offset="100%" stop-color="#f7a783" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                </defs>
+
+                                <text x="20" y="30" font-size="16" fill="#666">50</text>
+                                <text x="20" y="90" font-size="16" fill="#666">40</text>
+                                <text x="20" y="150" font-size="16" fill="#666">30</text>
+                                <text x="20" y="210" font-size="16" fill="#666">20</text>
+                                <text x="20" y="270" font-size="16" fill="#666">10</text>
+                                <text x="20" y="290" font-size="16" fill="#666">0</text>
+
+                                <line x1="50" y1="30" x2="580" y2="30" stroke="#eee" stroke-dasharray="4 4"/>
+                                <line x1="50" y1="90" x2="580" y2="90" stroke="#eee" stroke-dasharray="4 4"/>
+                                <line x1="50" y1="150" x2="580" y2="150" stroke="#eee" stroke-dasharray="4 4"/>
+                                <line x1="50" y1="210" x2="580" y2="210" stroke="#eee" stroke-dasharray="4 4"/>
+                                <line x1="50" y1="270" x2="580" y2="270" stroke="#eee" stroke-dasharray="4 4"/>
+
+                                <text x="90" y="290" font-size="16" fill="#666" text-anchor="middle">Item 1</text>
+                                <text x="190" y="290" font-size="16" fill="#666" text-anchor="middle">Item 2</text>
+                                <text x="290" y="290" font-size="16" fill="#666" text-anchor="middle">Item 3</text>
+                                <text x="390" y="290" font-size="16" fill="#666" text-anchor="middle">Item 4</text>
+                                <text x="490" y="290" font-size="16" fill="#666" text-anchor="middle">Item 5</text>
+
+                                <polyline points="90,270 190,180 290,240 390,120 490,90" class="chart-line-1" />
+                                <polyline points="90,210 190,150 290,210 390,90 490,60" class="chart-line-2" />
+                                <polyline points="90,240 190,270 290,180 390,150 490,210" class="chart-line-3" />
+
+
+                                <g transform="translate(100, 15)">
+                                    <rect x="0" y="0" width="15" height="15" fill="#60a5fa" rx="3" ry="3"/>
+                                    <text x="20" y="12" font-size="14" fill="#666">Series 1</text>
+                                </g>
+                                <g transform="translate(200, 15)">
+                                    <rect x="0" y="0" width="15" height="15" fill="#a78bfa" rx="3" ry="3"/>
+                                    <text x="20" y="12" font-size="14" fill="#666">Series 2</text>
+                                </g>
+                                <g transform="translate(300, 15)">
+                                    <rect x="0" y="0" width="15" height="15" fill="#f7a783" rx="3" ry="3"/>
+                                    <text x="20" y="12" font-size="14" fill="#666">Series 3</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col orange-shadow">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-semibold text-gray-800">Top Sell Products</h2>
+                            <div class="relative inline-block text-left">
+                                <select class="block appearance-none w-full bg-[#F5652F] text-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded-full shadow leading-tight focus:outline-none focus:shadow-outline text-sm">
+                                    <option class="bg-white text-gray-700">This Week</option>
+                                    <option class="bg-white text-gray-700">This Month</option>
+                                    <option class="bg-white text-gray-700">This Year</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto flex-grow">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider rounded-tl-lg">Code</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider rounded-tr-lg">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CA123</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Spaghetti</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">250</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">$ 3,375</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">BD123</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Cola</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">500</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">$ 1,245</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">SD123</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Fruit-Salad</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">115</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">$ 862.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">LP123</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">BBQ-Ribs</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">75</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">$ 1,199.25</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">NP123</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Lemonade</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">90</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">$ 224.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">AE123</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Nachos</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">88</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">$ 374</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">EN123</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Iced-Tea</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">109</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">$ 325.91</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!--section class=" text-center  p-10" -->
+            <section class="hidden page-content" id="upload-content">
+            <div class="content-area">
+                <div class="left-section">
+                    <div class="product-upload-section">
+                        <h2>Product Upload</h2>
+                        <div class="form-container">
+                            <h3>Form</h3>
+                            <form id="productForm">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id">ID Code</label>
+                                    <input type="text" id="id" name="id" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <input type="text" id="category" name="category" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" id="quantity" name="quantity" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="number" id="price" name="price" step="0.01" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="discount">Discount</label>
+                                    <input type="number" id="discount" name="discount" step="0.01" value="0" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="total">Total</label>
+                                    <input type="number" id="total" name="total" step="0.01" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input type="file" id="image" name="image" accept="image/*">
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn cancel-btn">Reset</button>
+                                    <button type="submit" class="btn submit-btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-section">
+                    <div class="product-list-section">
+                        <div class="product-list-header">
+                            <button class="edit-btn" id="toggleEditMode">Edit</button>
+                        </div>
+                        <table class="product-table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Qty</th>
+                                    <th>OG Price</th>
+                                    <th>Discount</th>
+                                    <th>Total</th>
+                                    <th>Category</th>
+                                    <th class="action-column">Actions</th> 
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody">
+                                </tbody>
+                        </table>
+                        <p id="noDataMessage" style="text-align: center; margin-top: 20px; color: #888;">No products added yet.</p>
+                    </div>
+                </div>
+            </div>
+        <!-- </main> -->
+    <!-- </div> -->
+
+    <script src="uploadscript.js"></script>
+
+    </section>
+
+           
+       
+        <section id="sale-content" class="page-content">
+            <div class="container">
+            
+                <div class="menu-section">
+                    <div class="header-section">
+                        <h2>Menu Items</h2>
+                        <div class="datetime" id="datetime"></div>
+                    </div>
+
+                    <div class="category-tabs" id="category-tabs">
+                        <div class="category-tab active" data-category="all">All Items</div>
+                        <div class="category-tab" data-category="foods">Foods</div>
+                        <div class="category-tab" data-category="drinks">Drinks</div>
+                        <div class="category-tab" data-category="snacks">Snacks</div>
+                        <div class="category-tab" data-category="desserts">Desserts</div>
+                    </div>
+
+                    <div class="menu-items-grid" id="menu-items-grid">
+                    
+                        <div class="menu-item" data-category="foods">
+                            <img src="saleimg/Cheeseburger.jpg" alt="Cheeseburger">
+                            <h3>Cheeseburger</h3>
+                            <p>$5.99</p>
+                            <button class="add-to-cart-btn" data-id="1">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="foods">
+                            <img src="saleimg/Pepperoni-Pizza.jpg" alt="Pepperoni Pizza">
+                            <h3>Pepperoni Pizza</h3>
+                            <p>$12.99</p>
+                            <button class="add-to-cart-btn" data-id="2">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="snacks">
+                            <img src="saleimg/French-Fries.jpg" alt="French Fries">
+                            <h3>French Fries</h3>
+                            <p>$3.99</p>
+                            <button class="add-to-cart-btn" data-id="3">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="drinks">
+                            <img src="saleimg/Cola.jpg" alt="Cola">
+                            <h3>Cola</h3>
+                            <p>$2.49</p>
+                            <button class="add-to-cart-btn" data-id="4">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="foods">
+                            <img src="saleimg/BBQ-Ribs.jpg" alt="BBQ Ribs">
+                            <h3>BBQ Ribs</h3>
+                            <p>$15.99</p>
+                            <button class="add-to-cart-btn" data-id="5">Add To Card</button>
+                        </div>
+
+                        <div class="menu-item" data-category="desserts">
+                            <img src="saleimg/Caesar-Salad.jpg" alt="Caesar Salad">
+                            <h3>Caesar Salad</h3>
+                            <p>$8.99</p>
+                            <button class="add-to-cart-btn" data-id="6">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="desserts">
+                            <img src="saleimg/Chocolate-Cake.jpg" alt="Chocolate Cake">
+                            <h3>Chocolate Cake</h3>
+                            <p>$6.99</p>
+                            <button class="add-to-cart-btn" data-id="7">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="drinks">
+                            <img src="saleimg/Iced-Tea.jpg" alt="Iced Tea">
+                            <h3>Iced Tea</h3>
+                            <p>$2.99</p>
+                            <button class="add-to-cart-btn" data-id="8">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="snacks">
+                            <img src="saleimg/Onion-Rings.jpg" alt="Onion Rings">
+                            <h3>Onion Rings</h3>
+                            <p>$3.99</p>
+                            <button class="add-to-cart-btn" data-id="9">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="foods">
+                            <img src="saleimg/Spaghetti-Bolognese.jpg" alt="Spaghetti">
+                            <h3>Spaghetti</h3>
+                            <p>$13.50</p>
+                            <button class="add-to-cart-btn" data-id="10">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="drinks">
+                            <img src="saleimg/Water.jpg" alt="Water">
+                            <h3>Water</h3>
+                            <p>$1.50</p>
+                            <button class="add-to-cart-btn" data-id="11">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="desserts">
+                            <img src="saleimg/Fruit-Salad.jpg" alt="Fruit Salad">
+                            <h3>Fruit Salad</h3>
+                            <p>$7.50</p>
+                            <button class="add-to-cart-btn" data-id="12">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="foods">
+                            <img src="saleimg/Grilled-Chicken.jpg" alt="Grilled Chicken">
+                            <h3>Grilled Chicken</h3>
+                            <p>$18.99</p>
+                            <button class="add-to-cart-btn" data-id="13">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="drinks">
+                            <img src="saleimg/Lemonade.jpg" alt="Lemonade">
+                            <h3>Lemonade</h3>
+                            <p>$2.49</p>
+                            <button class="add-to-cart-btn" data-id="14">Add To Cart</button>
+                        </div>
+
+                        <div class="menu-item" data-category="snacks">
+                            <img src="saleimg/Nachos.jpg" alt="Nachos">
+                            <h3>Nachos</h3>
+                            <p>$4.25</p>
+                            <button class="add-to-cart-btn" data-id="15">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+        
+                <div class="bill-section">
+                        <div class="bill-header">
+                            <h3>Current Order</h3>
+                        </div>
+
+                        <div class="customer-info">
+                            <label for="table-number">Table No:</label>
+                            <input type="number" id="table-number" min="1" value="1">
+                        </div>
+
+                        <div class="bill-items" id="bill-items">
+                            <div class="empty-bill-message">No items added yet.</div>
+                        </div>
+
+                        <div class="bill-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal-amount">$0.00</span>
+                            </div>
+
+                            <div class="summary-row discount-input">
+                                <span>Discount (%):</span>
+                                <input type="number" id="discount-percentage" min="0" max="100" value="0">
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Discount Amount:</span>
+                                <span id="discount-amount">$0.00</span>
+                            </div>
+
+                            <div class="summary-row total-amount">
+                                <span>Total:</span>
+                                <span id="total-amount">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-options">
+                            <select id="payment-method">
+                                <option value="">Select Payment Method</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Card">Credit Card</option>
+                                <option value="Mobile">Mobile Payment</option>
+                            </select>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-clear" id="clear-order-btn">Clear Order</button>
+                            <button class="btn btn-checkout" id="checkout-btn">Checkout</button>
+                            <button class="btn btn-print" id="print-bill-btn">Print Bill</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script src="sale.js"></script>
+    
+            <section id="sale-history-content" class="page-content hidden">
+
+             <div class="order-history-header">
+                    <h2>Order History</h2>
+                    <p>Manage your recent orders.</p>
+                </div>
+                <div class="divider-line"></div>
+                <div class="order-details-header">
+                    <h2>Order Details</h2>
+                    <p>Review and manage your recent orders.</p>
+                </div>
+                <div class="order-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>CA123</td>
+                                <td>Spaghetti</td>
+                                <td>12.5.2025</td>
+                                <td>9:00 AM</td>
+                                <td>15</td>
+                                <td>$ 202.5</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>BD123</td>
+                                <td>Cola</td>
+                                <td>12.5.2025</td>
+                                <td>10:30 AM</td>
+                                <td>5</td>
+                                <td>$ 12.45</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>SD123</td>
+                                <td>Fruit-Salad</td>
+                                <td>12.5.2025</td>
+                                <td>10:30 AM</td>
+                                <td>6</td>
+                                <td>$ 45</td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>LP123</td>
+                                <td>BBQ-Ribs</td>
+                                <td>12.5.2025</td>
+                                <td>11:00 AM</td>
+                                <td>10</td>
+                                <td>$ 159.9</td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td>NP123</td>
+                                <td>Lemonade</td>
+                                <td>12.5.2025</td>
+                                <td>12:45 PM</td>
+                                <td>12</td>
+                                <td>$ 29.88</td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td>AE123</td>
+                                <td>Nachos</td>
+                                <td>12.5.2025</td>
+                                <td>1:00 PM</td>
+                                <td>7</td>
+                                <td>$ 169.75</td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td>EN123</td>
+                                <td>Iced-Tea</td>
+                                <td>12.5.2025</td>
+                                <td>1:30 PM</td>
+                                <td>13</td>
+                                <td>$ 38.87</td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td>ES123</td>
+                                <td>French Fries</td>
+                                <td>12.5.2025</td>
+                                <td>2:15 PM</td>
+                                <td>11</td>
+                                <td>$ 43.89</td>
+                            </tr>
+                            <tr>
+                                <td>9.</td>
+                                <td>EE123</td>
+                                <td>Cheeseburger</td>
+                                <td>12.5.2025</td>
+                                <td>3:00 PM</td>
+                                <td>16</td>
+                                <td>$ 95.84</td>
+                            </tr>
+                            <tr>
+                                <td>10.</td>
+                                <td>ST123</td>
+                                <td>Onion-Rings</td>
+                                <td>12.5.2025</td>
+                                <td>4:10 PM</td>
+                                <td>3</td>
+                                <td>$ 11.97</td>
+                            </tr>
+                            <tr>
+                                <td>11.</td>
+                                <td>PE123</td>
+                                <td>Pepperoni-Pizza</td>
+                                <td>12.5.2025</td>
+                                <td>4:30 PM</td>
+                                <td>7</td>
+                                <td>$ 90.93</td>
+                            </tr>
+                            <tr>
+                                <td>12.</td>
+                                <td>DE123</td>
+                                <td>Grilled-Chicken</td>
+                                <td>12.5.2025</td>
+                                <td>5:00 PM</td>
+                                <td>2</td>
+                                <td>$ 37.98</td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="setting-content" class="page-content hidden">
+                  <div class="tab-buttons">
+    <button class="tab-link active" onclick="openTab(event, 'account')">Account Info</button>
+    <button class="tab-link" onclick="openTab(event, 'terms')">Terms & Policy</button>
+  </div>
+
+  <div id="account" class="tab-content active">
+    <h3>Account Info</h3>
+    <div class="settings-grid">
+      <div class="account-info">
+        <div class="profile-picture" onclick="document.getElementById('profileInput').click()">
+          <img id="profilePreview" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" />
+          <div class="camera-icon"><i class="fa-solid fa-camera"></i></div>
+          <input type="file" id="profileInput" accept="image/*" onchange="previewImage(event)" hidden />
+        </div>
+
+        <div class="form-line">
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" placeholder=" " autocomplete="off" />
+        </div>
+        <div class="form-line">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder=" " autocomplete="off" />
+        </div>
+        <div class="form-line">
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" placeholder=" " autocomplete="off" />
+        </div>
+        <div class="form-line">
+          <label for="role">Role:</label>
+          <select id="role">
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="cashier">Cashier</option>
+          </select>
+        </div>
+        <div class="form-line">
+          <label for="password">Password:</label>
+          <input type="text" id="password" placeholder=" " autocomplete="new-password" />
+        </div>
+
+        <button class="cancel-btn" onclick="resetForm()">Cancel</button>
+        <button class="save-btn" onclick="saveChanges()">Save Changes</button>
+        <div class="message" id="saveMessage"></div>
+      </div>
+
+      <div class="deactivate-box">
+        <form id="deactivateForm" onsubmit="deactivateAccount(event)" autocomplete="off" novalidate>
+          <h4>Account Deactivation</h4>
+          <p>You may deactivate your account at any time. This will permanently disable access.</p>
+
+          <div class="form-line">
+            <label for="deactivatePass">Enter Password:</label>
+            <input type="text" id="deactivatePass" name="deactivatePass" placeholder=" " autocomplete="new-password" />
+          </div>
+
+          <button type="submit" class="deactivate-btn">Deactivate</button>
+          <div class="message" id="deactivateMessage"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="terms" class="tab-content">
+    <h1 style="text-align: center; color: #222;">Terms & Conditions</h1>
+    <p style="line-height: 2;">Welcome to our POS site...</p>
+    <h2> Data & Privacy</h2>
+    <p>We collect basic information (e.g., name, email) for service and support purposes.</p>
+    <p>Your data is protected under our Privacy Policy.</p>
+    
+    <p>...</p>
+    <hr />
+    <h1 style="text-align: center;">Privacy Policy</h1>
+
+    <p>Your privacy is important to us...</p>
+    <h2>Use of Information</h2>
+    <p>We use your information to improve our services...</p>
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:pos@gmail.com">pos@gmail.com</a></p>
+  </div>
+
+ <script src="account.js"></script>
+
+            </section>
+
+            <section id="sign-out-content" class="page-content hidden text-center p-10">
+                <h2 class="text-3xl font-bold text-gray-700 mb-4">You have signed out.</h2>
+                <p class="text-gray-500 text-lg">Thank you for using Our POS!</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageContents = document.querySelectorAll('.page-content');
+            const headerTitle = document.getElementById('header-title');
+
+            function showPage(pageId) {
+                pageContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                const targetPage = document.getElementById(`${pageId}-content`);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                } else {
+                    console.warn(`Page content with ID '${pageId}-content' not found.`);
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    link.classList.remove('bg-gray-100');
+                    link.classList.add('hover:bg-gray-100');
+                });
+
+                const activeLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+                
+                if (activeLink) {
+                    activeLink.classList.add('active-link');
+                    activeLink.classList.add('bg-gray-100');
+                    activeLink.classList.remove('hover:bg-gray-100');
+                    headerTitle.textContent = activeLink.dataset.title;
+                }
+
+                
+                const signOutButton = document.querySelector('button[data-page="sign-out"]');
+                if (pageId === 'sign-out' && signOutButton) {
+                   
+                    signOutButton.classList.add('bg-[#c94d24]'); 
+                    signOutButton.classList.remove('bg-[#c94d24]'); 
+                }
+
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const pageId = link.dataset.page;
+                    showPage(pageId);
+                });
+            });
+
+            const signOutButton = document.querySelector('button[data-page="sign-out"]');
+            if (signOutButton) {
+                signOutButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const pageId = signOutButton.dataset.page;
+                    showPage(pageId);
+                });
+            }
+
+
+            showPage('dashboard');
+        });
+    </script>
+
+    
+    
+</body>
+</html>

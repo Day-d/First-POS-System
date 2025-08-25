@@ -1,0 +1,74 @@
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .main-content-scrollable {
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #f7a783 transparent;
+        }
+
+        .main-content-scrollable::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .main-content-scrollable::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .main-content-scrollable::-webkit-scrollbar-thumb {
+            background-color: #f7a783;
+            border-radius: 10px;
+            border: 2px solid transparent;
+        }
+
+        .green-light-indicator {
+            width: 10px;
+            height: 10px;
+            background-color: #34d399;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #34d399, 0 0 10px #34d399;
+            animation: pulse-green 1.5s infinite alternate;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .nav-link.active-link .green-light-indicator {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 5px #34d399, 0 0 10px #34d399;
+            }
+            100% {
+                box-shadow: 0 0 10px #34d399, 0 0 20px #34d399;
+            }
+        }
+
+        .chart-line-1 {
+            stroke: #60a5fa;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .chart-line-2 {
+            stroke: #a78bfa;
+            stroke-width: 2;
+            fill: none;
+        }
+        .chart-line-3 {
+            stroke: #f7a783;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .orange-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 5px 15px rgba(250, 147, 109, 0.4);
+        }
